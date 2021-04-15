@@ -1,0 +1,13 @@
+﻿@model CMC.Models.CoinMarket
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">CoinMarketCap API Data</h1>
+</div>
+
+@foreach(var coin in Model.cmcData.data)
+{
+    <p>@coin.name</p>
+}
