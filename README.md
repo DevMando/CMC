@@ -1,2 +1,4 @@
 # CMC
-Coin Market Cap API Data
+An Implementation of Coin Market Cap's REST API
+https://coinmarketcap.com/api/documentation/v1/
+
