@@ -4,10 +4,27 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">CoinMarketCap API Data</h1>
+    <h1 class="display-4">Crypto Market</h1>
+    <h3>Powered by CoinMarketCap</h3>
 </div>
 
-@foreach(var coin in Model.cmcData.data)
+
+@foreach (var coin in Model.cmcData.data.ToList().Take(20))
 {
-    <p>@coin.name</p>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item"><span>@coin.cmc_rank.ToString(). (@coin.symbol) @coin.name        @coin.quote.price.ToString("C")</span></li>
+    </ul>
 }
+
+<form>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+            @for (int x = 1; x < Model.cmcData.pages; x++)
+            {
+                <li class="page-item"><button class="page-link" href="#" type="submit">@x.ToString()</button></li>
+            }
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+    </nav>
+</form>

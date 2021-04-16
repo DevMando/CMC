@@ -58,6 +58,12 @@ namespace CMC.Models
     {
         public Status status;
         public Coin[] data;
+        public int pages = 0;
+
+        public void calculatePages()
+        {
+            pages = (data.Count() / 20) + (data.Count()%20 == 0 ? 0 : 1);
+        }
     }
 
 }
