@@ -22,8 +22,6 @@ namespace CMC.Controllers
         {
             CoinMarket cmc = new CoinMarket();
             cmc.ApiCall();
-            //cmc.cmcData.calculatePages();
-            //cmc.cmcData.data.Or;
             return View(cmc);
         }
 
