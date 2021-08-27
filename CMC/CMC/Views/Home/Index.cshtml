@@ -3,16 +3,17 @@
     ViewData["Title"] = "Home Page";
 }
 
+
 <div class="text-center">
     <h1 class="display-4">Crypto Market</h1>
     <h3>Powered by CoinMarketCap</h3>
 </div>
 
-
-@foreach (var coin in Model.cmcData.data.ToList().Take(20))
+<p>Total Coins: @Model.cmcData.data.ToList().Count().ToString()</p>
+@foreach (var coin in Model.cmcData.data.ToList())
 {
     <ul class="list-group list-group-flush">
-        <li class="list-group-item"><span>@coin.cmc_rank.ToString(). (@coin.symbol) @coin.name        @coin.quote.price.ToString("C")</span></li>
+        <li class="list-group-item"><span>@coin.cmc_rank.ToString(). (@coin.symbol) @coin.name @coin.quote.price.ToString("C")</span></li>
     </ul>
 }
 
