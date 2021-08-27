@@ -21,7 +21,6 @@ namespace CMC.Models
         {
             const string API_KEY_HEADER_VALUE = "X-CMC_PRO_API_KEY";
             string endpoint = $"{API_DOMAIN}/v1/cryptocurrency/listings/latest";
-
             var URL = new UriBuilder($"{API_DOMAIN}/v1/cryptocurrency/listings/latest");
 
             var queryString = HttpUtility.ParseQueryString(string.Empty);
